@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <script src="database.json" lang="json"></script> -->
+    <script src="script.js"></script>
+    <title>公告</title>
+    <script>
+      var jsonData,CH,EN,MA,EL,DL,ELA,DLA,AA,SO,MU,PE,ANN;
+      try{
+        fetch("./database.json")
+          .then(response => response.json()).then(data =>
+          {
+            jsonData = data;
+            console.log(jsonData);
+            processData(jsonData);
+          }).catch(error =>{
+            console.error("出錯 請檢查json內是否有值",error);
+          });
+        }
+        catch{console.error("出錯 請檢查是否有檔案", error);}
+      function processData(data){
+        CH = data.CH;
+        EN = data.EN;
+        MA = data.MA;
+        EL = data.EL;
+        DL = data.DL;
+        ELA = data.ELA;
+        DLA = data.DLA;
+        AA = data.AA;
+        SO = data.SO;
+        MU = data.MU;
+        PE = data.PE;
+        ANN = data.ANN;
+        console.log(CH);
+      }
+    </script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="classes.html">課程表</a></li>
+        <li><a href="announcement.html">公告</a></li>
+      </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <table class="announce">
+      <thead>
+        <tr>
+          <th>國文</th>
+          <th>英文</th>
+          <th>數學</th>
+          <th>電子學</th>
+          <th>數位邏輯</th>
+          <th>電子學實習</th>
+          <th>可程式邏輯實習</th>
+          <th>行動裝置應用實習</th>
+          <th>公民</th>
+          <th>音樂</th>
+          <th>體育</th>
+          <th>班導公告</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="ch"></td>
+          <td id="en"></td>
+          <td id="ma"></td>
+          <td id="el"></td>
+          <td id="dl"></td>
+          <td id="ela"></td>
+          <td id="dla"></td>
+          <td id="aa"></td>
+          <td id="so"></td>
+          <td id="mu"></td>
+          <td id="pe"></td>
+          <td id="ann"></td>
+      </tr>
+  </tbody>
+</table>
+<script>
+  var jsonData;
+
+  try {
+      fetch("./database.json")
+          .then(response => response.json())
+          .then(data => {
+              jsonData = data;
+              console.log(jsonData);
+
+              // 更新表格中的数据
+              ch = document.querySelector("#ch");
+              en = document.querySelector("#en");
+              ma = document.querySelector("#ma");
+              el = document.querySelector("#el");
+              dl = document.querySelector("#dl");
+              ela = document.querySelector("#ela");
+              dla = document.querySelector("#dla");
+              aa = document.querySelector("#aa");
+              so = document.querySelector("#so");
+              mu = document.querySelector("#mu");
+              pe = document.querySelector("#pe");
+              ann = document.querySelector("#ann");
+
+              formattedDataCH = jsonData.CH.join("<br>");
+              formattedDataEN = jsonData.EN.join("<br>");
+              formattedDataMA = jsonData.MA.join("<br>");
+              formattedDataEL = jsonData.EL.join("<br>");
+              formattedDataDL = jsonData.DL.join("<br>");
+              formattedDataELA = jsonData.ELA.join("<br>");
+              formattedDataDLA = jsonData.DLA.join("<br>");
+              formattedDataAA = jsonData.AA.join("<br>");
+              formattedDataSO = jsonData.SO.join("<br>");
+              formattedDataMU = jsonData.MU.join("<br>");
+              formattedDataPE = jsonData.PE.join("<br>");
+              formattedDataANN = jsonData.ANN.join("<br>");
+
+              ch.innerHTML = formattedDataCH;
+              en.innerHTML = formattedDataEN;
+              ma.innerHTML = formattedDataMA;
+              el.innerHTML = formattedDataEL;
+              dl.innerHTML = formattedDataDL;
+              ela.innerHTML = formattedDataELA;
+              dla.innerHTML = formattedDataDLA;
+              aa.innerHTML = formattedDataAA;
+              so.innerHTML = formattedDataSO;
+              mu.innerHTML = formattedDataMU;
+              pe.innerHTML = formattedDataPE;
+              ann.innerHTML = formattedDataANN;
+
+          })
+          .catch(error => {
+              console.error("出錯 請檢查json內是否有值", error);
+          });
+  } catch (error) {
+      console.error("出錯 請檢查是否有檔案", error);
+  }
+</script>
+</body>
+</html>
