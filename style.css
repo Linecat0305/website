@@ -1,0 +1,44 @@
+nav {
+  width: 100%;
+  height: max-content;
+}
+ul {
+  list-style-type: none;
+  background-color: #dddddd;
+  margin: 10 10 10 10;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 99%;
+  
+}
+li {
+  display: inline;
+  float: left;
+}
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+  text-decoration: none;
+  color: black;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.announce{
+  width: 100%;
+  height: 100%;
+}
+table .announce th,td{
+  padding: 20px;
+}
+
+.classes{
+  width: 70%;
+  height: auto;
+}
+table .classes th,td{
+  padding: 40px;
+}
