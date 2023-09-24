@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Setting</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form name="editform" method="post" action="" onsubmit="return exit()">
+      <input type="date" required/>
+      <select name="noon" required>
+        <option value="" selected disabled>上中下午</option>
+        <option value="morning" onchange="">早上</option>
+        <option value="noon" onchange="">中午</option>
+        <option value="afternoon">下午</option>
+      </select>
+      <select name="subject" required>
+        <option value="" selected disabled>請選擇科目</option>
+        <option value="CH" >國文</option>
+        <option value="EN">英文</option>
+        <option value="MA">數學</option>
+        <option value="EL">電子學</option>
+        <option value="DL">數位邏輯</option>
+        <option value="ELA">電子學實習</option>
+        <option value="DLA">數位邏輯實習</option>
+        <option value="AA">行動裝置應用實習</option>
+        <option value="SO">公民</option>
+        <option value="MU">音樂</option>
+        <option value="PE">體育</option>
+        <option value="ANN">班導公告</option>
+      </select>
+      <input name ="item" type="text" required />
+      <input type="submit" onsubmit="alert('成功！')" value="送出"/>
+    </form>
+  </body>
+</html>
