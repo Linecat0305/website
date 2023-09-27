@@ -4,8 +4,8 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <form name="editform" method="post" action="" onsubmit="return exit()">
-      <input type="date" required/>
+    <form name="editform" method="post" action="/process_data" onsubmit="return exit()">
+      <input type="date" name="date"required/>
       <select name="noon" required>
         <option value="" selected disabled>上中下午</option>
         <option value="morning" onchange="">早上</option>
