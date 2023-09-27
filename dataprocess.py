@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, jsonify
 import json
 
 with open('database.json','r') as json_file:
@@ -22,8 +22,9 @@ def process_data():
     old_data[subject].append(join_data)
     with open('database.json', 'w') as json_file:
         json.dump(old_data, json_file, indent=4)
-
-    return None
+        
+    response_data = {"message": "Data.Send.OK"}
+    return jsonify(response_data)
 
 if __name__ == '__main__':
     app.run()
